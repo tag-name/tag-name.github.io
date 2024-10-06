@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;tag-name></title>
+    <!-- load render blocking, define the Web Component BEFORE DOM is parsed! -->
+    <script src="element.js"></script>
+    <script src="https://file-size.github.io/element.js"></script>
+</head>
+
+<body>
+    <style>
+        body {
+            font: 56px arial;
+            color: darkgreen;
+        }
+
+        *::part(span) {
+            color: darkred;
+        }
+
+        *::part(name):hover {
+            color: gold;
+        }
+
+        *::part(tag-name) {
+            background: pink;
+        }
+
+        section {
+            font: 24px arial;
+        }
+
+        span {
+            background: lightgreen;
+        }
+    </style>
+    The quick brown fox jumps over the lazy dog <span>Hello
+        <tag-name>web-component-tutor</tag-name> in the Web Component World!</span> The quick
+    brown fox jumps over the lazy dog
+    <section>
+
+        <h1>The most offending Web Component</h1>
+        <ul>
+            <li>Loads render blocking before DOM is parsed, for minimal FOUCs</li>
+            <li>Declares a variable as parameter to save 4 Bytes (let name=)</li>
+            <li>Uses <code>setTimeout</code> to wait for lightDOM to be parsed</li>
+            <li>uses shadowDOM so CSS styles do not leak <b>out</b> (or in for that matter)</li>
+            <li>Writes HTML attribute values without quotes to save Bytes</li>
+            <li>No ending &lt;/style> tag because its at the end of the shadowRoot, thus closes automagically, again..
+                saving Bytes</li>
+        </ul>
+        <h2>GZip analysis</h2>
+        <file-size gz src="https://tag-name.github.io/element.min.js"></file-size>
+    </section>
+</body>
+
+</html>
