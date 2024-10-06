@@ -12,9 +12,9 @@ customElements.define(
           "<span part=span>\u203A</span>" +
           "<style>:host{white-space:nowrap}" +
           ":host(:hover){cursor:pointer}" +
-          "[part=span]{line-height:0;font-size:170%;position:relative;top:.07em";
-        this.onclick = (_) =>
-          (document.location = `https://${name.trim()}.github.io`);
+          "[part=span]{line-height:0;font-size:1.7em;position:relative;top:.07em";
+        this.onclick = (e) =>
+          (document.location = "https://" + name.trim() + ".github.io");
       });
     }
   }
