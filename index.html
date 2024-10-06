@@ -50,6 +50,7 @@
             <li>Uses <code>setTimeout</code> to wait for lightDOM to be parsed</li>
             <li>uses shadowDOM so CSS styles do not leak <b>out</b> (or in for that matter)</li>
             <li>Writes HTML attribute values without quotes to save Bytes</li>
+            <li>Uses t & n HTMLUnknownElements for shorter code</li>
             <li>No ending &lt;/style> tag because its at the end of the shadowRoot, thus closes automagically, again..
                 saving Bytes</li>
         </ul>
