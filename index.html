@@ -8,14 +8,12 @@
     <!-- load render blocking, define the Web Component BEFORE DOM is parsed! -->
     <script src="element.js"></script>
     <script src="https://file-size.github.io/element.js"></script>
-</head>
-
-<body>
-    <h1>&lt;tag-name> Web Component</h1>
     <style>
-        body {
-            font: 56px arial;
+        example {
+            display: block;
+            font: 30px arial;
             color: darkgreen;
+            margin-left: 2em;
         }
 
         *::part(span) {
@@ -23,11 +21,11 @@
         }
 
         *::part(name):hover {
-            color: gold;
+            color: darkgoldenrod;
         }
 
-        *::part(tag-name) {
-            background: pink;
+        *::part(all) {
+            background: lightgreen;
         }
 
         section {
@@ -35,15 +33,40 @@
         }
 
         span {
-            background: lightgreen;
+            background: lightsteelblue;
         }
     </style>
-    The quick brown fox jumps over the lazy dog <span>Hello
-        <tag-name>web-component-tutor</tag-name> in the Web Component World!</span> The quick
-    brown fox jumps over the lazy dog
-    <section>
+</head>
 
-        <h2>The most offending Web Component</h2>
+<body>
+    <section>
+        <h1>&lt;tag-name> Web Component</h1>
+        <p>Display a string as HTML tag (with <b>Unicode</b> brackets). Because using actual &lt; > brackets would
+            execute the
+            Web Component.
+        </p>
+        <p>Extra functionality: click the tag-name to open the associated link</p>
+        <p>
+        <ul>
+            <li>
+                <a href="https://github.com/tag-name/tag-name.github.io/blob/main/element.js">Source code</a>
+            </li>
+            <li>
+                <a href="https://github.com/tag-name/tag-name.github.io">Github repo</a></p>
+            </li>
+        </ul>
+        <h3>Example (in green):</h3>
+        <example>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna
+            aliqua. <span>Hello <tag-name>web-component-tutor</tag-name> in the Web Component World!</span> Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </example>
+        <h4>with attribute <b>tag</b> defining tag-name</h4>
+        <example>
+            <tag-name tag="tag-name" attrs="tag='tag-name'">web-component-tutor</tag-name>
+        </example>
+        <h3>This is my most offending Web Component:</h3>
         <ul>
             <li>Loads render blocking before DOM is parsed, for minimal FOUCs</li>
             <li>Declares a variable as parameter to save 4 Bytes (let name=)</li>
@@ -54,7 +77,7 @@
             <li>No ending &lt;/style> tag because its at the end of the shadowRoot, thus closes automagically, again..
                 saving Bytes</li>
         </ul>
-        <h2>GZip analysis</h2>
+        <h3>GZip analysis</h3>
         <file-size gz src="https://tag-name.github.io/element.min.js"></file-size>
     </section>
 </body>
